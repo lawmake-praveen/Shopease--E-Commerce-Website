@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-// import { Image } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getAllProducts,
   fetchAllProducts,
   addToCart,
 } from "../features/ProductSlice";
-import {
-  AiOutlineArrowUp,
-} from "react-icons/ai";
+import { AiOutlineArrowUp } from "react-icons/ai";
 import { Product } from "./export";
 
 const Products = () => {
@@ -18,12 +15,12 @@ const Products = () => {
   const allProducts = useSelector(getAllProducts);
   const searchInput = useSelector((state) => state.product.searchInput);
 
-  console.log(allProducts)
+  console.log(allProducts);
   useEffect(() => {
     dispatch(fetchAllProducts());
 
     const handleScroll = () => {
-      window.scrollY > 300 ? setShowBackToTop(true) : setShowBackToTop(false)
+      window.scrollY > 300 ? setShowBackToTop(true) : setShowBackToTop(false);
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -57,9 +54,13 @@ const Products = () => {
             />
           );
         })
-      ) : (
+      ) : searchInput ? (
         <div className="no-items">
-          No results for "{searchInput}" <br /> <span>Try something else!</span>
+          No results {searchInput} <br />
+        </div>
+      ) : (
+        <div className="home-page-loading">
+          <h1>Loading...</h1>
         </div>
       )}
     </div>

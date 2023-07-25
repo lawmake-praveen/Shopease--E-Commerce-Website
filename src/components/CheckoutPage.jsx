@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-const CheckoutPage = ({ allCartProducts, setCheckoutPage, worth, setOrderPlaced }) => {
-
+const CheckoutPage = ({
+  allCartProducts,
+  setCheckoutPage,
+  worth,
+  setOrderPlaced,
+}) => {
   const orderCompleted = () => {
     setCheckoutPage(false);
     setOrderPlaced(true);
@@ -13,7 +17,6 @@ const CheckoutPage = ({ allCartProducts, setCheckoutPage, worth, setOrderPlaced 
 
   return (
     <div className="checkout-page-outer">
-
       <div className="checkout-page">
         <span className="close-btn" onClick={() => setCheckoutPage(false)}>
           <AiOutlineClose />

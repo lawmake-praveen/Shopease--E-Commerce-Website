@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-// import { Image } from "antd";
-import { addToCart } from "../features/ProductSlice";
+import React from "react";
 import { AiFillStar, AiFillCheckCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
@@ -13,11 +11,7 @@ const Product = ({ item, addProductToCart, isRecentlyAdded }) => {
         </h3>
         <p className="company-name">{item.brand}</p>
         <div className="img-container">
-          {item.thumbnail ? (
             <img src={item.thumbnail} className="img" />
-          ) : (
-            "Image Loading"
-          )}
         </div>
         <div className="price-details">
           <span className="discount-price">${item.price}</span>

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Navbar, CartProducts, CheckoutPage } from "../components/export";
 import { useSelector, useDispatch } from "react-redux";
-import { AiFillStar } from "react-icons/ai";
 import { BsPatchCheckFill } from "react-icons/bs";
-// import { Image } from "antd";
-import { removeFromCart, clearCart } from "../features/ProductSlice";
+import { clearCart } from "../features/ProductSlice";
 import { Link } from "react-router-dom";
 
 const Cart = () => {

@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { Navbar } from "../components/export";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { AiFillStar } from "react-icons/ai";
-// import { Image } from "antd";
-import { removeFromCart, clearCart } from "../features/ProductSlice";
-import { Link } from "react-router-dom";
+import { removeFromCart } from "../features/ProductSlice";
 
 const CartProducts = ({item}) => {
   const dispatch = useDispatch()

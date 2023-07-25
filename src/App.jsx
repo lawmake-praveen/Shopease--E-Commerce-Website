@@ -1,8 +1,7 @@
 import React from "react";
-import { Navbar, Home, SingleProduct } from "./components/export";
+import { Navbar, Home, SingleProduct, PageNotAvailable } from "./components/export";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contact from "./pages/Contact";
-import {About, Cart} from "./pages/export";
+import {About, Cart, Contact} from "./pages/export";
 
 const App = () => {
   return (
@@ -15,6 +14,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/product/:id" element={<SingleProduct />}/>
+          <Route path="/*" element={<PageNotAvailable />}/>
         </Routes>
       </BrowserRouter>
     </div>
