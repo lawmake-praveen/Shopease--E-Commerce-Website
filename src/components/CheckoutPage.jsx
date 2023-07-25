@@ -8,7 +8,7 @@ const CheckoutPage = ({ allCartProducts, setCheckoutPage, worth, setOrderPlaced 
     setOrderPlaced(true);
     setTimeout(() => {
       setOrderPlaced(false);
-    }, 4000);
+    }, 3000);
   };
 
   return (

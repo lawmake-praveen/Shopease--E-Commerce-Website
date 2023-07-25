@@ -7,9 +7,7 @@ import {
   addToCart,
 } from "../features/ProductSlice";
 import {
-  AiFillStar,
   AiOutlineArrowUp,
-  AiFillCheckCircle,
 } from "react-icons/ai";
 import { Product } from "./export";
 
@@ -18,18 +16,14 @@ const Products = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const dispatch = useDispatch();
   const allProducts = useSelector(getAllProducts);
-  const allCartProducts = useSelector((state) => state.product.cart);
   const searchInput = useSelector((state) => state.product.searchInput);
 
+  console.log(allProducts)
   useEffect(() => {
     dispatch(fetchAllProducts());
 
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowBackToTop(true);
-      } else {
-        setShowBackToTop(false);
-      }
+      window.scrollY > 300 ? setShowBackToTop(true) : setShowBackToTop(false)
     };
     window.addEventListener("scroll", handleScroll);
 

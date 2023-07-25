@@ -37,19 +37,18 @@ const Navbar = () => {
       <Link to="/" className="logo-container">
         <img src={icon} className="logo" />
       </Link>
-      <ul className={showMenu ? "menu-bar active" : "menu-bar"}>
+      <nav className={showMenu ? "menu-bar active" : "menu-bar"}>
         <NavLink
+          exact="true"
           to="/"
-          className="item"
-          activeclassname="active-link"
+          className={({ isActive }) => (isActive ? "item active-link" : "item")}
           onClick={menuClicked}
         >
           Home
         </NavLink>
         <NavLink
           to="/about"
-          activeclassname="active-link"
-          className="item"
+          className={({ isActive }) => (isActive ? "item active-link" : "item")}
           onClick={() => {
             setShowMenu(false);
             setShowMenuBtn(true);
@@ -59,8 +58,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink
           to="/contact"
-          activeclassname="active-link"
-          className="item"
+          className={({ isActive }) => (isActive ? "item active-link" : "item")}
           onClick={() => {
             setShowMenu(false);
             setShowMenuBtn(true);
@@ -68,7 +66,7 @@ const Navbar = () => {
         >
           Contact
         </NavLink>
-      </ul>
+      </nav>
       <div className="cart-menu">
         <Link
           to="/cart"

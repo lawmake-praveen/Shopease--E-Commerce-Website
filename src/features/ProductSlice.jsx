@@ -34,10 +34,21 @@ export const fetchProductsBySearch = createAsyncThunk(
   }
 );
 
+export const fetchSelectedProduct = createAsyncThunk(
+  "products/fetchSelectedProduct",
+  async (id) => {
+    const response = await fetch(`https://dummyjson.com/products/${id}`).then(
+      (res) => res.json()
+    );
+    return response;
+  }
+);
+
 const initialState = {
   products: [],
   searchInput: "",
   cart: [],
+  selectedProduct: {},
 };
 
 const productSlice = createSlice({
@@ -76,6 +87,9 @@ const productSlice = createSlice({
     clearCart(state, action) {
       state.cart = [];
     },
+    removeSelectedProduct(state, action) {
+      state.selectedProduct = {};
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -87,11 +101,19 @@ const productSlice = createSlice({
       })
       .addCase(fetchProductsBySearch.fulfilled, (state, action) => {
         return { ...state, products: action.payload };
+      })
+      .addCase(fetchSelectedProduct.fulfilled, (state, action) => {
+        return { ...state, selectedProduct: action.payload };
       });
   },
 });
 
-export const { setSearchInput, addToCart, removeFromCart, clearCart } =
-  productSlice.actions;
+export const {
+  setSearchInput,
+  addToCart,
+  removeFromCart,
+  clearCart,
+  removeSelectedProduct,
+} = productSlice.actions;
 export const getAllProducts = (state) => state.product.products;
 export default productSlice.reducer;
