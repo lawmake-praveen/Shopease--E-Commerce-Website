@@ -15,7 +15,6 @@ const Products = () => {
   const allProducts = useSelector(getAllProducts);
   const searchInput = useSelector((state) => state.product.searchInput);
 
-  console.log(allProducts);
   useEffect(() => {
     dispatch(fetchAllProducts());
 
