@@ -1,7 +1,6 @@
 import React from "react";
 import resume from "../assets/Resume - Lawmake Praveen.pdf";
-import { whatsapp, github, linkedIn } from "../assets/export";
-import { about } from "../components/content";
+import { about, social } from "../components/content";
 
 const About = () => {
   return (
@@ -10,7 +9,11 @@ const About = () => {
       <div className="para">
         <p>
           This website is created by{" "}
-          <a href="https://lawmake.vercel.app/" target="_blank">
+          <a
+            href="https://lawmake.vercel.app/"
+            target="_blank"
+            className="regular-link"
+          >
             Lawmake Praveen
           </a>
           .
@@ -31,34 +34,31 @@ const About = () => {
         </p>
         <p>
           You can download my{" "}
-          <a href={resume} target="_blank" download="Resume-Lawmake Praveen">
+          <a
+            href={resume}
+            target="_blank"
+            download="Resume-Lawmake Praveen"
+            className="regular-link"
+          >
             resume here
           </a>
         </p>
       </div>
       <h1 className="heading">My Social</h1>
       <div className="para links">
-        <a
-          href="https://www.linkedin.com/in/lawmake-praveen-928a15239/"
-          target="_blank"
-          className="logo-link"
-        >
-          <img src={linkedIn} />
-        </a>
-        <a
-          href="https://github.com/lawmake-praveen"
-          target="_blank"
-          className="logo-link"
-        >
-          <img src={github} />
-        </a>
-        <a
-          href="https://wa.me/6381376043"
-          target="_blank"
-          className="logo-link"
-        >
-          <img src={whatsapp} />
-        </a>
+        {social.map((item, index) => {
+          return (
+            <a
+              href={item.link}
+              key={index}
+              title={item.title}
+              target="_blank"
+              className="logo-link"
+            >
+              <img src={item.image} alt={item.title} />
+            </a>
+          );
+        })}
       </div>
       <div className="company-about-us">
         {about.map((item, index) => {

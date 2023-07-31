@@ -1,3 +1,29 @@
+import { whatsapp, github, linkedIn, web } from "../assets/export";
+
+
+export const social = [
+  {
+    link: "https://lawmake.vercel.app",
+    image: web,
+    title: "Website",
+  },
+  {
+    link: "https://www.linkedin.com/in/lawmake-praveen-928a15239/",
+    image: linkedIn,
+    title: "LinkedIn",
+  },
+  {
+    link: "https://github.com/lawmake-praveen",
+    image: github,
+    title: "GitHub",
+  },
+  {
+    link: "https://wa.me/6381376043",
+    image: whatsapp,
+    title: "Whatsapp",
+  },
+];
+
 export const about = [
   {
     heading: 'About Us - Shopease',

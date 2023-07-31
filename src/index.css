@@ -743,6 +743,12 @@ a {
 .about .para {
   margin-left: 30px;
 }
+.about .para .regular-link {
+  color: rgb(0, 0, 180);
+}
+.about .para .regular-link:hover {
+  text-decoration: underline;
+}
 .about .para .logo-link {
   width: 70px;
   height: 70px;

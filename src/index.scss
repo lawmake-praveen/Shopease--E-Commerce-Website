@@ -796,6 +796,13 @@ a {
   .para {
     margin-left: 30px;
 
+    .regular-link {
+      color: rgb(0, 0, 180);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     .logo-link {
       width: 70px;
       height: 70px;
